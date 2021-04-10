@@ -1,0 +1,103 @@
+.about {
+  color: var(--blue);
+  padding-top: 70px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom:  70px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 35px;
+  letter-spacing: 0.05em;
+  color: var(--blue);
+  margin-bottom: 40px;
+  position: relative;
+  padding-left: 11px;
+}
+.title::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  top: 0;
+  left: 0;
+  background-color: var(--blue);
+}
+.title.white{
+  color: #fff
+}
+.title.white::before{
+  background-color: #fff;
+}
+.subtitle {
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0.055em;
+  color: var(--blue);
+  margin-bottom: 20px;
+}
+.subtitle p:first-child {
+  margin-bottom: 10px;
+}
+
+/* achiev */
+.achievs {
+  margin-bottom: 40px;
+}
+.achiev {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.achiev_img {
+  margin-right: 15px;
+  min-width: 60px;
+}
+.achiev_text {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  color: var(--blue);
+  max-width: 50%;
+}
+
+/* bg */
+.bg {
+  position: absolute;
+  top: 0;
+  /* left: 40%; */
+  transform: translateX(20%);
+  width: 100%;
+  height: 100%;
+}
+.gradient1,
+.gradient2 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: -1px;
+}
+.gradient1 {
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.97) 0%,
+    rgba(255, 255, 255, 0) 38.09%,
+    #ffffff 91.06%,
+    #ffffff 100%
+  );
+}
+.gradient2 {
+  background-image: linear-gradient(
+    88.8deg,
+    #ffffff 22.24%,
+    rgba(255, 255, 255, 0.33) 98.56%
+  );
+}
+.bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

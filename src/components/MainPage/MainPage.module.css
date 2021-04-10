@@ -1,0 +1,68 @@
+/* certificates */
+.certificates {
+  margin-bottom: 50px;
+}
+.certificates_inner {
+  display: flex;
+  justify-content: center;
+}
+.certificate:first-child {
+  margin-right: 55px;
+}
+.certificate {
+  transition: 0.4s ease;
+}
+.certificate img {
+  max-width: 100%;
+}
+.certificate:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 28px rgba(176, 197, 220, 0.4);
+}
+
+/* contacts */
+.contacts {
+  padding: 67px 0;
+}
+
+.contacts_inner {
+  display: flex;
+  align-items: center;
+}
+.contacts_inner__left {
+  width: 50%;
+}
+.contacts_inner__right {
+  width: 50%;
+}
+.contacts_inner__right img {
+  max-width: 100%;
+}
+
+.contact_item {
+  display: flex;
+  align-items: center;
+  color: var(--blue);
+  margin-bottom: 30px;
+}
+.contact_item:last-child{
+  margin-bottom: 0;
+}
+.contact_left {
+}
+.contact_img {
+  margin-right: 15px;
+}
+
+.contact_text {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0.055em;
+  /* убрать флекс? */
+  display: flex;
+}
+.contact_text span{
+  font-weight: 600;
+  margin-right: 10px;
+}
