@@ -22,7 +22,7 @@ export const Achiev = (props) => {
         style={{
           color: props.isWhite ? "white" : "",
           fontWeight: props.fw ? props.fw : 600,
-          maxWidth: props.width ? `${props.width}%` : "50%"
+          maxWidth: props.width ? `${props.width}%` : "50%",
         }}
         className={s.achiev_text}
       >
@@ -52,7 +52,9 @@ const AboutCompany = () => {
       </div>
       <div class="container">
         <div className={s.about_inner}>
-          <div className={s.title}>О компании</div>
+          <div className={s.title}>
+            <span>О компании</span>
+          </div>
           <div className={s.subtitle}>
             <p>
               «ICG.Ltd» являемся сертифицированной и лицензированой крюинговой

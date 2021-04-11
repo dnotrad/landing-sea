@@ -102,7 +102,7 @@ const MainPage = () => {
       <section className={s.inner}>
         <TopBlock
           bg={bg1}
-          width="596px"
+          width="579px"
           title="Международная Крюинговая Группа"
           subtitle={[
             "Занимает одну из ведущих позиций в сфере подбора и трудоустройства моряков, работая на рынке с 2000г., выполняя заказы на разные типы судов.",
@@ -131,7 +131,7 @@ const MainPage = () => {
         />
         <section id="contacts" className={s.contacts}>
           <div className="container">
-            <div className={title.title}>Контакты</div>
+            <div className={title.title}> <span>Контакты</span></div>
             <div className={s.contacts_inner}>
               <div className={s.contacts_inner__left}>
                 {contacts.map((el) => (

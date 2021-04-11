@@ -60,7 +60,7 @@
 }
 
 .subtitle {
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 300;
   max-width: 500px;
   line-height: 1.5;
@@ -122,11 +122,16 @@
     width: 180%;
   }
   .title{
-    font-size: 23px;
+    font-size: 25px;
     font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 20px;
   }
   .subtitle{
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
+  }
+  .content_inner{
+    margin-top: -20px;
   }
 }

@@ -105,8 +105,11 @@ h6 {
 body {
   font-family: "Open Sans", sans-serif;
   color: #fff;
+  overflow-x: hidden;
 }
-
+body.fix{
+  overflow: hidden;
+}
 .container {
   padding: 0 15px;
   max-width: 1230px;
@@ -114,7 +117,7 @@ body {
 
   height: inherit;
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 /* scroll */

@@ -52,8 +52,90 @@ const Header = (props) => {
 
   const [isSailorMore, setIsSailorMore] = React.useState(false);
   const [isBussinesMore, setIsBussinesMore] = React.useState(false);
+
+  const [isBurger, setIsBurger] = React.useState(false);
+  React.useEffect(() => {
+    let body = document.querySelector("body");
+    if(isBurger) body.classList.add("fix");
+    else body.classList.remove("fix")
+  }, [isBurger]);
   return (
     <header className={`${s.header} ${props.footer && s.footer}`}>
+      {!props.footer && (
+        <div className={`${s.burger_menu} ${isBurger && s.active}`}>
+          <nav className={s.nav_mob}>
+            <div className={s.nav_mob_inner}>
+              <NavLink
+                to="/"
+                data-scroll="top"
+                onClick={(e) => {
+                  setIsBurger(false);
+                  scrollInto(e.target);
+                }}
+                className={s.link}
+              >
+                Главная
+              </NavLink>
+              <NavLink
+                to="/"
+                data-scroll="about"
+                className={s.link}
+                onClick={(e) => {
+                  setIsBurger(false);
+                  scrollInto(e.target);
+                }}
+              >
+                О компании
+              </NavLink>
+              <NavLink
+                to="/"
+                data-scroll="service"
+                className={s.link}
+                onClick={(e) => {
+                  setIsBurger(false);
+                  scrollInto(e.target);
+                }}
+              >
+                Наши услуги
+              </NavLink>
+
+              <NavLink
+                to="/seaman"
+                data-scroll="seaman"
+                onClick={(e) => {
+                  setIsBurger(false);
+                  scrollInto(e.target);
+                }}
+                className={`${s.link} ${isSailorMore && s.active}`}
+              >
+                Морякам
+              </NavLink>
+              <NavLink
+                to="/shipowners"
+                className={`${s.link} ${isBussinesMore && s.active}`}
+                data-scroll="shipowners"
+                onClick={(e) => {
+                  setIsBurger(false);
+                  scrollInto(e.target);
+                }}
+              >
+                Судовладельцам
+              </NavLink>
+              <NavLink
+                to="/"
+                data-scroll="contacts"
+                className={s.link}
+                onClick={(e) => {
+                  setIsBurger(false);
+                  scrollInto(e.target);
+                }}
+              >
+                Контакты
+              </NavLink>
+            </div>
+          </nav>
+        </div>
+      )}
       <div class="container">
         <div className={s.header__inner}>
           <div className={s.logo}>
@@ -69,10 +151,19 @@ const Header = (props) => {
             </div>
           </div>
           <nav className={s.nav}>
-            <div className={s.lang_mob}>
-              <Languages />
-            </div>
-            <div className={s.burger}>burger</div>
+            {!props.footer && (
+              <div className={s.lang_mob}>
+                <Languages />
+              </div>
+            )}
+            {!props.footer && (
+              <div
+                className={`${s.burger} ${isBurger && s.active}`}
+                onClick={() => setIsBurger(!isBurger)}
+              >
+                <div className={s.burger_line}></div>
+              </div>
+            )}
             <div className={s.nav_inner}>
               <NavLink
                 to="/"
