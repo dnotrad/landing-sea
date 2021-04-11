@@ -32,8 +32,8 @@ import ship from "../../assets/icons/service/ship.svg";
 import more from "../../assets/icons/service/more.svg";
 
 // docs
-import doc1 from "../../assets/docs/doc1.png";
-import doc2 from "../../assets/docs/doc2.png";
+import doc1 from "../../assets/docs/cert1.jpg";
+import doc2 from "../../assets/docs/cert2.jpg";
 import OurService from "../OurService/OurService";
 
 const ContactItem = (props) => {
@@ -107,19 +107,39 @@ const MainPage = () => {
           subtitle={[
             "Занимает одну из ведущих позиций в сфере подбора и трудоустройства моряков, работая на рынке с 2000г., выполняя заказы на разные типы судов.",
           ]}
-          links={[inst, vk, whats, mail]}
+          subtitle_mob={[
+            "Занимает одну из ведущих позиций в сфере подбора и трудоустройства моряков, работая на рынке с 2000г., выполняя заказы на разные типы судов.",
+          ]}
+          links={[
+            {
+              img: inst,
+              href: "https://instagram.com/icg.ltd?igshid=1dadgaw2pt13f",
+            },
+            {
+              img: vk,
+              href: "https://vk.com/icgltd",
+            },
+            {
+              img: whats,
+              href: "mailto:icgsev@gmail.com",
+            },
+            {
+              img: mail,
+              href: "mailto:icgsev@gmail.com",
+            },
+          ]}
         />
         <AboutCompany />
         <section className={s.certificates}>
           <div className="container">
             <div className={title.title}>Сертификаты</div>
             <div className={s.certificates_inner}>
-              <div className={s.certificate}>
+              <a href={doc1} target="_blank" className={s.certificate}>
                 <img src={doc1} alt="doc1" />
-              </div>
-              <div className={s.certificate}>
-                <img src={doc1} alt="doc1" />
-              </div>
+              </a>
+              <a href={doc2} target="_blank" className={s.certificate}>
+                <img src={doc2} alt="doc1" />
+              </a>
             </div>
           </div>
         </section>
@@ -131,16 +151,23 @@ const MainPage = () => {
         />
         <section id="contacts" className={s.contacts}>
           <div className="container">
-            <div className={title.title}> <span>Контакты</span></div>
+            <div className={title.title}>
+              {" "}
+              <span>Контакты</span>
+            </div>
             <div className={s.contacts_inner}>
               <div className={s.contacts_inner__left}>
                 {contacts.map((el) => (
                   <ContactItem title={el.title} text={el.text} img={el.img} />
                 ))}
               </div>
-              <div className={s.contacts_inner__right}>
+              <a
+                href="https://yandex.ru/maps/959/sevastopol/house/ulitsa_borisa_mikhaylova_7b/Z0oYcgNiSEMAQFpufXl5cH9jYA==/?ll=33.442167%2C44.581304&source=wizgeo&utm_medium=maps-desktop&utm_source=serp&z=16.72"
+                target="_blank"
+                className={s.contacts_inner__right}
+              >
                 <img src={map} alt="" />
-              </div>
+              </a>
             </div>
           </div>
         </section>

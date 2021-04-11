@@ -93,7 +93,9 @@
 .social_link:last-child {
   margin-right: 0;
 }
-
+.subtitle.mob{
+  display: none;
+}
 @keyframes title {
   0% {
     opacity: 0;
@@ -133,5 +135,11 @@
   }
   .content_inner{
     margin-top: -20px;
+  }
+  .subtitle{
+    display: none;
+  }
+  .subtitle.mob{
+    display: block;
   }
 }
