@@ -123,7 +123,7 @@ body {
 ::-webkit-scrollbar {
   width: 8px; /* ширина для вертикального скролла */
   height: 8px; /* высота для горизонтального скролла */
-  background-color: rgba(34, 56, 121, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ползунок скроллбара */

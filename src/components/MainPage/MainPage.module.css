@@ -66,3 +66,13 @@
   font-weight: 600;
   margin-right: 10px;
 }
+
+@media (max-width: 800px) {
+
+  .contacts_inner__left{
+    width: 100%;
+  }
+  .contacts_inner__right{
+    display: none;
+  }
+}

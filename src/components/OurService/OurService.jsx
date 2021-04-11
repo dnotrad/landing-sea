@@ -15,7 +15,7 @@ const OurService = (props) => {
       </div>
       <div className="container">
         <div className={s.block}>
-          <div className={`${title.title} ${title.white}`} id="service">
+          <div className={`${title.title} ${title.white}`} id={props.id}>
             {props.title}
           </div>
           {props.subtitle && <div className={s.subtitle}>{props.subtitle}</div>}

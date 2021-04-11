@@ -123,7 +123,12 @@ const MainPage = () => {
             </div>
           </div>
         </section>
-        <OurService bg={bg_servise} title="Наши услуги" achievs={achievs}/>
+        <OurService
+          bg={bg_servise}
+          title="Наши услуги"
+          achievs={achievs}
+          id="service"
+        />
         <section id="contacts" className={s.contacts}>
           <div className="container">
             <div className={title.title}>Контакты</div>

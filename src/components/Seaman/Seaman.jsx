@@ -26,9 +26,17 @@ import passport from "../../assets/icons/service/passport.svg";
 import seaDoc from "../../assets/icons/service/sea-doc.svg";
 import visaWhite from "../../assets/icons/service/visa-white.svg";
 
+import cert from "../../assets/icons/seaman/second/cert.svg";
+import flag from "../../assets/icons/seaman/second/flag.svg";
+import hand from "../../assets/icons/seaman/second/hand.svg";
+import passportSec from "../../assets/icons/seaman/second/passport.svg";
+import ship from "../../assets/icons/seaman/second/ship.svg";
+import photo from "../../assets/icons/seaman/second/photo.svg";
+
 // img
 import bg from "../../assets/img/bg-seaman.png";
 import bg2 from "../../assets/img/bg-seaman2.png";
+import bg3 from "../../assets/img/bg-seaman3.png";
 import OurService from "../OurService/OurService";
 
 const achievs = [
@@ -50,7 +58,8 @@ const achievsService = [
     img: seaDoc,
   },
   {
-    text: "Продление, новый паспорт моряка Украины и справки об отсутствии судимости",
+    text:
+      "Продление, новый паспорт моряка Украины и справки об отсутствии судимости",
     img: passport,
   },
   {
@@ -62,10 +71,18 @@ const achievsService = [
     img: visaWhite,
   },
 ];
+const achievsSecond = [
+  { text: "Фотографии 3 x 4", img: photo },
+  { text: "Паспорт моряка, загранпаспорт", img: passportSec },
+  { text: "Сертификаты согласно ПДНВ 78/95", img: cert },
+  { text: "Копии сертификатов, отзывов, и т.д.", img: hand },
+  { text: "Справки о плавании (если есть)", img: ship },
+  { text: "Документы флага (если есть)", img: flag },
+];
 const Seaman = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <div className={s.page}>
+    <div className={s.page} id="seaman">
       <TopBlock
         bg={bg}
         width="820px"
@@ -77,49 +94,95 @@ const Seaman = () => {
         links={[call, whats, mail]}
       />
       <div className={s.inner}>
-        <div className="container">
-          <div className={title.title}>Вакансии</div>
-          <div className={s.rupor}>
-            <div className={s.rupor_img}>
-              <img src={rupor} alt="rupor" />
-            </div>
-            <div className={s.rupor_text}>Срочно требуется</div>
+        <div className={s.top}>
+          <div className={s.bg}>
+            <div className={s.gradient1}></div>
+            <div className={s.gradient2}></div>
+            <img src={bg3} alt="bg2" />
           </div>
-          <div className={s.vakansia}>
-            <p>
-              <span>Опытный рефмеханик</span> на судно БАТМ. Посадка в Лас
-              Пальмасе по готовности кандидата.
-            </p>
-            <p>
-              <span>Оклад 5000 </span>$
-            </p>
-          </div>
-          <button className={s.button_more} onClick={() => setIsOpen(!isOpen)}>
-            <div>Больше вакансий</div>
-            <div className={`${s.button_img} ${isOpen && s.active}`}>
-              <img src={arrow} alt="arrow" />
+          <div className="container">
+            <div className={title.title} id="vakansii">
+              Вакансии
             </div>
-          </button>
-          <div className={`${s.more_info} ${isOpen && s.active}`}>
-            <p className={s.more_info_title}>
-              Так же на судно типа БАТМ <span>требуются опытные :</span>
-            </p>
+            <div className={s.rupor}>
+              <div className={s.rupor_img}>
+                <img src={rupor} alt="rupor" />
+              </div>
+              <div className={s.rupor_text}>Срочно требуется</div>
+            </div>
+            <div className={s.vakansia}>
+              <p>
+                <span>Опытный рефмеханик</span> на судно БАТМ. Посадка в Лас
+                Пальмасе по готовности кандидата.
+              </p>
+              <p>
+                <span>Оклад 5000 </span>$
+              </p>
+            </div>
+            <button
+              className={s.button_more}
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <div>Больше вакансий</div>
+              <div className={`${s.button_img} ${isOpen && s.active}`}>
+                <img src={arrow} alt="arrow" />
+              </div>
+            </button>
+            <div className={`${s.more_info} ${isOpen && s.active}`}>
+              <p className={s.more_info_title}>
+                Так же на судно типа БАТМ <span>требуются опытные :</span>
+              </p>
+              <div className={s.achievs}>
+                {achievs.map((el) => (
+                  <Achiev img={el.img} text={el.text} />
+                ))}
+              </div>
+              <div className={s.date}>Дата размещения: 21.01.21</div>
+              <div className={s.more_info_bottom}>
+                <span> На постоянной основе требуются: </span>
+                рефмеханики; электромеханики; механики - старшие механики,
+                вторые, третьи; механики наладчики; технологи; тралмастера;
+                матросы траловой и в цех; буфетчицы, официантки, прачки
+              </div>
+            </div>
+            <div className={title.title} id="anketa">
+              Анкета
+            </div>
+            <div className={s.anketa_subtitle}>
+              <p>
+                <span> Для постановки на учет необходимо </span> заполнить
+                анкету.
+              </p>
+              <p>
+                Анкета для рядового состава -
+                <span className={s.download}>
+                  <a href="#"> скачать</a>
+                </span>
+              </p>
+              <p>
+                Анкета для старшего состава -
+                <span className={s.download}>
+                  <a href="#"> скачать</a>
+                </span>
+              </p>
+              <p>
+                {" "}
+                <span> Список необходимых документов:</span>
+              </p>
+            </div>
             <div className={s.achievs}>
-              {achievs.map((el) => (
+              {achievsSecond.map((el) => (
                 <Achiev img={el.img} text={el.text} />
               ))}
             </div>
-            <div className={s.date}>Дата размещения: 21.01.21</div>
-            <div className={s.more_info_bottom}>
-              <span> На постоянной основе требуются: </span>
-              рефмеханики; электромеханики; механики - старшие механики, вторые,
-              третьи; механики наладчики; технологи; тралмастера; матросы
-              траловой и в цех; буфетчицы, официантки, прачки
+            <div className={s.english}>
+              *Опыт работы, хорошее знание английского языка ускорят ваше
+              трудоустройство.
             </div>
           </div>
-          <div className={title.title}>Анкета</div>
         </div>
         <OurService
+          id="service_seaman"
           bg={bg2}
           title="Услуги компании"
           subtitle="Консультация по оформлению:"

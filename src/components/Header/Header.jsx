@@ -60,13 +60,19 @@ const Header = (props) => {
             <div className={s.logo_img}>
               <img src={logo} alt="logo" />
             </div>
-            <div className={s.logo_title}>ICG.Ltd</div>
-            <div className={s.logo_subtitle}>
-              <p>International</p>
-              <p>Crewing Group</p>
+            <div className={s.right}>
+              <div className={s.logo_title}>ICG.Ltd</div>
+              <div className={s.logo_subtitle}>
+                <p>International</p>
+                <p>Crewing Group</p>
+              </div>
             </div>
           </div>
           <nav className={s.nav}>
+            <div className={s.lang_mob}>
+              <Languages />
+            </div>
+            <div className={s.burger}>burger</div>
             <div className={s.nav_inner}>
               <NavLink
                 to="/"
@@ -104,17 +110,37 @@ const Header = (props) => {
                   )
                 }
               >
-                <NavLink to="/seaman" className={`${s.link} ${isSailorMore && s.active}`}>
+                <NavLink
+                  to="/seaman"
+                  data-scroll="seaman"
+                  onClick={(e) => scrollInto(e.target)}
+                  className={`${s.link} ${isSailorMore && s.active}`}
+                >
                   Морякам
                 </NavLink>
                 <div className={`${s.links_extra} ${isSailorMore && s.active}`}>
-                  <NavLink to="/shipowners" className={s.link}>
+                  <NavLink
+                    to="/seaman"
+                    data-scroll="vakansii"
+                    onClick={(e) => scrollInto(e.target)}
+                    className={s.link}
+                  >
                     Вакансии
                   </NavLink>
-                  <NavLink to="/shipowners" className={s.link}>
+                  <NavLink
+                    to="/seaman"
+                    data-scroll="anketa"
+                    onClick={(e) => scrollInto(e.target)}
+                    className={s.link}
+                  >
                     Анкета
                   </NavLink>
-                  <NavLink to="/shipowners" className={s.link}>
+                  <NavLink
+                    className={s.link}
+                    to="/seaman"
+                    data-scroll="service_seaman"
+                    onClick={(e) => scrollInto(e.target)}
+                  >
                     Услуги компании
                   </NavLink>
                 </div>
