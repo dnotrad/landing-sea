@@ -148,7 +148,7 @@
 }
 .header.header.footer .links_extra {
   top: -120px;
-  background: rgb(22 95 171 / 57%);
+  background: rgba(127, 176, 215, 0.75);
 }
 .links_extra.active {
   opacity: 1;

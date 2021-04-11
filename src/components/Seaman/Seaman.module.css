@@ -118,6 +118,7 @@
   font-size: 14px;
   letter-spacing: 0.055em;
   color: var(--blue);
+  line-height: 1.5;
 }
 .download {
   position: relative;

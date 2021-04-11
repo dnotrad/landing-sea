@@ -84,7 +84,9 @@ const achievsSecond = [
   { text: "Справки о плавании (если есть)", img: ship },
   { text: "Документы флага (если есть)", img: flag },
 ];
+
 const Seaman = () => {
+  let date = new Date().toLocaleString("ru", {year: 'numeric', month: 'long', day: 'numeric' });
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <div className={s.page} id="seaman">
@@ -159,7 +161,7 @@ const Seaman = () => {
                   <Achiev img={el.img} text={el.text} />
                 ))}
               </div>
-              <div className={s.date}>Дата размещения: 21.01.21</div>
+              <div className={s.date}>Дата размещения: {date || "10.04.2021"}</div>
               <div className={s.more_info_bottom}>
                 <span> На постоянной основе требуются: </span>
                 рефмеханики; электромеханики; механики - старшие механики,
@@ -178,13 +180,19 @@ const Seaman = () => {
               <p>
                 Анкета для рядового состава -
                 <span className={s.download}>
-                  <a href={anketa1} download> скачать</a>
+                  <a href={anketa1} download>
+                    {" "}
+                    скачать
+                  </a>
                 </span>
               </p>
               <p>
                 Анкета для старшего состава -
                 <span className={s.download}>
-                  <a href={anketa2} download> скачать</a>
+                  <a href={anketa2} download>
+                    {" "}
+                    скачать
+                  </a>
                 </span>
               </p>
               <p>
