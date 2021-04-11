@@ -4,6 +4,10 @@ import Header from "./components/Header/Header";
 import MainPage from "./components/MainPage/MainPage";
 import Seaman from "./components/Seaman/Seaman";
 import Shipowners from "./components/Shipowners/Shipowners";
+import smoothscroll from "smoothscroll-polyfill";
+
+// kick off the polyfill!
+smoothscroll.polyfill();
 
 function App() {
   return (
