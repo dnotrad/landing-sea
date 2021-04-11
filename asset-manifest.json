@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/landing-sea/static/css/main.24eb50d9.chunk.css",
-    "main.js": "/landing-sea/static/js/main.dabe5686.chunk.js",
-    "main.js.map": "/landing-sea/static/js/main.dabe5686.chunk.js.map",
+    "main.css": "/landing-sea/static/css/main.b6fb830b.chunk.css",
+    "main.js": "/landing-sea/static/js/main.aa601649.chunk.js",
+    "main.js.map": "/landing-sea/static/js/main.aa601649.chunk.js.map",
     "runtime-main.js": "/landing-sea/static/js/runtime-main.fc26a945.js",
     "runtime-main.js.map": "/landing-sea/static/js/runtime-main.fc26a945.js.map",
     "static/js/2.eeed8ff0.chunk.js": "/landing-sea/static/js/2.eeed8ff0.chunk.js",
     "static/js/2.eeed8ff0.chunk.js.map": "/landing-sea/static/js/2.eeed8ff0.chunk.js.map",
     "index.html": "/landing-sea/index.html",
-    "static/css/main.24eb50d9.chunk.css.map": "/landing-sea/static/css/main.24eb50d9.chunk.css.map",
+    "static/css/main.b6fb830b.chunk.css.map": "/landing-sea/static/css/main.b6fb830b.chunk.css.map",
     "static/js/2.eeed8ff0.chunk.js.LICENSE.txt": "/landing-sea/static/js/2.eeed8ff0.chunk.js.LICENSE.txt",
     "static/media/about-bg.18fa399f.jpg": "/landing-sea/static/media/about-bg.18fa399f.jpg",
     "static/media/achiev.71a52f84.svg": "/landing-sea/static/media/achiev.71a52f84.svg",
@@ -80,7 +80,7 @@
   "entrypoints": [
     "static/js/runtime-main.fc26a945.js",
     "static/js/2.eeed8ff0.chunk.js",
-    "static/css/main.24eb50d9.chunk.css",
-    "static/js/main.dabe5686.chunk.js"
+    "static/css/main.b6fb830b.chunk.css",
+    "static/js/main.aa601649.chunk.js"
   ]
 }
