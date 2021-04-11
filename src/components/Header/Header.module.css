@@ -213,5 +213,6 @@
  }
  .logo_subtitle p:first-child{
    margin-bottom: 1px;
+   letter-spacing: 0.205em;
  }
 }
