@@ -29,57 +29,32 @@ import more from "../../assets/icons/shipowners/more.svg";
 import bg from "../../assets/img/bg-shipowners.png";
 import bg2 from "../../assets/img/bg-shipowners2.png";
 
-const achievs = [
-  { text: "Бронирование/покупка билетов", img: tickets },
-  { text: "Предоставление спец.одежды морякам", img: seaman },
-  { text: "Посадка/высадка, включая визовую поддержку", img: visa },
-  { text: "Представление интересов компании Судовладельца", img: doc },
-  {
-    text:
-      "Собеседование перед приемом на работу, контроль и проверка профессиональных навыков и знаний",
-    img: sobes,
-  },
-  {
-    text: "Содействие при прохождении медицинского освидетельствования",
-    img: med,
-  },
-  {
-    text:
-      "Контроль и проверка наличия и легитимности необходимых документов, руководствуясь требованиями STCW 78/95",
-    img: achiev,
-  },
-  {
-    text:
-      "Отправка специализированных мобильных бригад по ремонту и техническому контролю",
-    img: settings,
-  },
-  {
-    text:
-      "Предоставление персонала для работы на верфях и береговых строительных проектах",
-    img: peoples,
-  },
-  {
-    text:
-      "Предоставление квалифицированного плавсостава, как в единичном порядке, так и на основе комплектования полных экипажей, для всех типов судов",
-    img: ship,
-  },
-  { text: "И другие сопутствующие услуги", img: more },
-];
+// langs
+import { useTranslation } from "react-i18next";
+
 const Shipowners = () => {
+  const { t, i18n } = useTranslation();
+  const achievs = [
+    { text: t("shipowners.tickets"), img: tickets },
+    { text: t("shipowners.uniform"), img: seaman },
+    { text: t("shipowners.boarding"), img: visa },
+    { text: t("shipowners.owners"), img: doc },
+    { text: t("shipowners.interwiev"), img: sobes },
+    { text: t("shipowners.assistance"), img: med },
+    { text: t("shipowners.controle"), img: achiev },
+    { text: t("shipowners.travel"), img: settings },
+    { text: t("shipowners.manpower"), img: peoples },
+    { text: t("shipowners.provision"), img: ship },
+    { text: t("shipowners.other"), img: more },
+  ];
   return (
     <div className={s.page} id="shipowners">
       <TopBlock
         bg={bg}
         width="820px"
-        title="Судовладельцам"
-        subtitle={[
-          "«Международная Крюинговая Группа» предлагает ряд услуг по комплектации высококачественного экипажа на разные типы судов. Мы следуем международным и национальным требованиям. Все наши кандидаты тщательно подбираются квалифицированным и опытным персоналом нашей компании.",
-          "По всем вопросам вы можете позвонить нам по телефону или написать в мессенджер:",
-        ]}
-        subtitle_mob={[
-          "«Международная Крюинговая Группа» предлагает ряд услуг по комплектации высококачественного экипажа на разные типы судов. Мы следуем международным и национальным требованиям.",
-          "По всем вопросам вы можете позвонить нам по телефону или написать в мессенджер:",
-        ]}
+        title={t("shipowners.title")}
+        subtitle={[t("shipowners.subtitle"), t("shipowners.more")]}
+        subtitle_mob={[t("shipowners.subtitle_mob"), t("shipowners.more")]}
         links={[
           {
             img: call,
@@ -91,7 +66,7 @@ const Shipowners = () => {
           },
           {
             img: mail,
-            href: "mailto:icgsev@gmail.com",
+            href: "https://e.mail.ru/compose/?to=icgsev@gmail.com",
           },
         ]}
       />
@@ -104,24 +79,55 @@ const Shipowners = () => {
         </div>
         <div className="container">
           <div className={s.service}>
-            <div className={title.title} id="service_sudo">Услуги компании</div>
+            <div className={title.title} id="service_sudo">
+              {t("shipowners.service")}
+            </div>
             <div className={s.achievs}>
               {achievs.map((el) => (
                 <Achiev width="100" img={el.img} text={el.text} />
               ))}
             </div>
-            <div className={title.title} id="bussines">Сотрудничество</div>
-            <div className={s.text}>
-              Мы стараемся предложить нашим клиентам{" "}
-              <span>лучший сервис! </span>
-              «Международная Крюинговая Группа» имеет достойную базу
-              <span>квалифицированных специалистов.</span> Каждый член экипажа
-              сертифицирован и лицензирован. Наша компания нацелена на
-              <span>долгосрочные партнерские отношения</span> с клиентами. Мы
-              преданы судовладельцам и <span> даем гарантию качества.</span>
+            <div className={title.title} id="bussines">
+              {t("shipowners.cooperation.title")}
             </div>
             <div className={s.text}>
-              Предложение о сотрудничестве можно скачать <a href="#"><span className={s.download}>здесь</span></a> 
+              <p>{t("shipowners.cooperation.p1")}</p>
+              <p>
+                {t("shipowners.cooperation.p2.first")}{" "}
+                <span> {t("shipowners.cooperation.p2.we_works")}</span>{" "}
+                {t("shipowners.cooperation.p2.we_works_2")}
+                <span> {t("shipowners.cooperation.p2.we_works_3")}</span>
+                {t("shipowners.cooperation.p2.our_spec")}
+                <span>{t("shipowners.cooperation.p2.our_spec_2")} </span>{" "}
+                {t("shipowners.cooperation.p2.our_spec_3")}
+              </p>
+              <p>
+                {t("shipowners.cooperation.p3.1")}
+                <span>{t("shipowners.cooperation.p3.2")}</span>
+              </p>
+              <p>
+                {t("shipowners.cooperation.p4.1")}
+                <span>{t("shipowners.cooperation.p4.2")}</span>{" "}
+                {t("shipowners.cooperation.p4.3")}
+                <span>{t("shipowners.cooperation.p4.4")}</span>{" "}
+                {t("shipowners.cooperation.p4.5")}
+              </p>
+              <p>
+                {t("shipowners.cooperation.p5.1")}{" "}
+                <span>{t("shipowners.cooperation.p5.2")}</span>
+                {t("shipowners.cooperation.p5.3")}
+                <span>{t("shipowners.cooperation.p5.4")}</span>
+                {t("shipowners.cooperation.p5.5")}
+              </p>
+              <p>
+              {t("shipowners.cooperation.p6.1")}{" "}
+                <span>{t("shipowners.cooperation.p6.2")} </span>{t("shipowners.cooperation.p6.3")}{" "}
+                <span>{t("shipowners.cooperation.p6.4")}</span>, {t("shipowners.cooperation.p6.5")}
+                <span>{t("shipowners.cooperation.p6.6")}</span> {t("shipowners.cooperation.p6.7")}
+              </p>
+              <p>
+              {t("shipowners.cooperation.p7.1")}
+              </p>
             </div>
           </div>
         </div>

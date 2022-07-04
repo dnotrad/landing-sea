@@ -6,13 +6,37 @@ import eng from "../../assets/icons/england.svg";
 import arrow from "../../assets/icons/arrow-header.svg";
 import { NavLink, Link } from "react-router-dom";
 
-const Languages = () => {
+import { useState, useEffect } from "react";
+
+// translate
+import { useTranslation } from "react-i18next";
+
+function useLocalStorage(key, defaultValue) {
+  // 1 
+  let [value, setValue] = useState(
+    JSON.parse(localStorage.getItem(key)) || defaultValue
+  );
+  // 2
+  useEffect(() => {
+    localStorage.setItem(key, value);
+  }, [value]);
+  // 3
+  return [value, setValue];
+}
+
+const Languages = (props) => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
+
   const [isRussian, setIsRussian] = React.useState(true);
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <div className={s.languages} onClick={() => setIsOpen(!isOpen)}>
       <div className={`${s.language}`}>
-        {isRussian ? (
+        {props.isRussian ? (
           <img src={rus} alt="russia" />
         ) : (
           <img src={eng} alt="england" />
@@ -24,15 +48,14 @@ const Languages = () => {
       <div
         className={`${s.extra} ${isOpen && s.active}`}
         onClick={() => {
-          setIsRussian(!isRussian);
-          // setIsOpen(false);
+          props.setIsRussian(!props.isRussian);
         }}
       >
         <div className={`${s.language} ${s.small}`}>
-          {isRussian ? (
-            <img src={eng} alt="england" />
+          {props.isRussian ? (
+            <img src={eng} alt="england" onClick={() => changeLanguage("en")} />
           ) : (
-            <img src={rus} alt="russia" />
+            <img src={rus} alt="russia" onClick={() => changeLanguage("ru")} />
           )}
         </div>
       </div>
@@ -40,6 +63,10 @@ const Languages = () => {
   );
 };
 const Header = (props) => {
+  const [isRussian, setIsRussian] = React.useState(true);
+
+  let [counter, setCounter] = useLocalStorage("count", 0);
+
   function scrollInto(e) {
     const blockID = e.getAttribute("data-scroll");
     setTimeout(() => {
@@ -49,18 +76,23 @@ const Header = (props) => {
       });
     }, 0);
   }
-
+  useEffect(() => {
+    console.log(counter);
+  }, [counter]);
   const [isSailorMore, setIsSailorMore] = React.useState(false);
   const [isBussinesMore, setIsBussinesMore] = React.useState(false);
 
   const [isBurger, setIsBurger] = React.useState(false);
+  const { t, i18n } = useTranslation();
   React.useEffect(() => {
     let body = document.querySelector("body");
-    if(isBurger) body.classList.add("fix");
-    else body.classList.remove("fix")
+    if (isBurger) body.classList.add("fix");
+    // else if(!props.isLoader && !isBurger) alert(props.isLoader)
+    else if (!props.isLoader && !isBurger) body.classList.remove("fix");
   }, [isBurger]);
   return (
     <header className={`${s.header} ${props.footer && s.footer}`}>
+      {/* <div className={s.designer}>design: @pavlovaa</div> */}
       {!props.footer && (
         <div className={`${s.burger_menu} ${isBurger && s.active}`}>
           <nav className={s.nav_mob}>
@@ -74,7 +106,7 @@ const Header = (props) => {
                 }}
                 className={s.link}
               >
-                Главная
+                {t("header.main")}
               </NavLink>
               <NavLink
                 to="/"
@@ -85,7 +117,7 @@ const Header = (props) => {
                   scrollInto(e.target);
                 }}
               >
-                О компании
+                {t("header.about")}
               </NavLink>
               <NavLink
                 to="/"
@@ -96,7 +128,7 @@ const Header = (props) => {
                   scrollInto(e.target);
                 }}
               >
-                Наши услуги
+                {t("header.our_services")}
               </NavLink>
 
               <NavLink
@@ -108,7 +140,7 @@ const Header = (props) => {
                 }}
                 className={`${s.link} ${isSailorMore && s.active}`}
               >
-                Морякам
+                {t("header.seafarers")}
               </NavLink>
               <NavLink
                 to="/shipowners"
@@ -119,7 +151,7 @@ const Header = (props) => {
                   scrollInto(e.target);
                 }}
               >
-                Судовладельцам
+                {t("header.shipowners")}
               </NavLink>
               <NavLink
                 to="/"
@@ -130,14 +162,14 @@ const Header = (props) => {
                   scrollInto(e.target);
                 }}
               >
-                Контакты
+                {t("header.contact")}
               </NavLink>
             </div>
           </nav>
         </div>
       )}
       <div class="container">
-        <div className={s.header__inner}>
+        <div className={s.header__inner} onClick={() => setCounter(counter++)}>
           <div className={s.logo}>
             <div className={s.logo_img}>
               <img src={logo} alt="logo" />
@@ -153,7 +185,7 @@ const Header = (props) => {
           <nav className={s.nav}>
             {!props.footer && (
               <div className={s.lang_mob}>
-                <Languages />
+                <Languages isRussian={isRussian} setIsRussian={setIsRussian} />
               </div>
             )}
             {!props.footer && (
@@ -171,7 +203,7 @@ const Header = (props) => {
                 onClick={(e) => scrollInto(e.target)}
                 className={s.link}
               >
-                Главная
+                {t("header.main")}
               </NavLink>
               <NavLink
                 to="/"
@@ -179,7 +211,7 @@ const Header = (props) => {
                 className={s.link}
                 onClick={(e) => scrollInto(e.target)}
               >
-                О компании
+                {t("header.about")}
               </NavLink>
               <NavLink
                 to="/"
@@ -187,7 +219,7 @@ const Header = (props) => {
                 className={s.link}
                 onClick={(e) => scrollInto(e.target)}
               >
-                Наши услуги
+                {t("header.our_services")}
               </NavLink>
               <div
                 className={`${s.seamans}`}
@@ -207,7 +239,7 @@ const Header = (props) => {
                   onClick={(e) => scrollInto(e.target)}
                   className={`${s.link} ${isSailorMore && s.active}`}
                 >
-                  Морякам
+                  {t("header.seafarers")}
                 </NavLink>
                 <div className={`${s.links_extra} ${isSailorMore && s.active}`}>
                   <NavLink
@@ -216,7 +248,7 @@ const Header = (props) => {
                     onClick={(e) => scrollInto(e.target)}
                     className={s.link}
                   >
-                    Вакансии
+                    {t("header.vacancies")}
                   </NavLink>
                   <NavLink
                     to="/seaman"
@@ -224,7 +256,7 @@ const Header = (props) => {
                     onClick={(e) => scrollInto(e.target)}
                     className={s.link}
                   >
-                    Анкета
+                    {t("header.form")}
                   </NavLink>
                   <NavLink
                     className={s.link}
@@ -232,7 +264,7 @@ const Header = (props) => {
                     data-scroll="service_seaman"
                     onClick={(e) => scrollInto(e.target)}
                   >
-                    Услуги компании
+                    {t("header.Company_services")}
                   </NavLink>
                 </div>
               </div>
@@ -254,7 +286,7 @@ const Header = (props) => {
                   data-scroll="shipowners"
                   onClick={(e) => scrollInto(e.target)}
                 >
-                  Судовладельцам
+                  {t("header.shipowners")}
                 </NavLink>
                 <div
                   className={`${s.links_extra} ${isBussinesMore && s.active}`}
@@ -265,7 +297,7 @@ const Header = (props) => {
                     className={s.link}
                     onClick={(e) => scrollInto(e.target)}
                   >
-                    Услуги компании
+                    {t("header.Company_services")}
                   </NavLink>
                   <NavLink
                     to="/shipowners"
@@ -273,7 +305,7 @@ const Header = (props) => {
                     className={s.link}
                     onClick={(e) => scrollInto(e.target)}
                   >
-                    Сотрудничество
+                    {t("header.Cooperation")}
                   </NavLink>
                 </div>
               </div>
@@ -283,9 +315,11 @@ const Header = (props) => {
                 className={s.link}
                 onClick={(e) => scrollInto(e.target)}
               >
-                Контакты
+                {t("header.contact")}
               </NavLink>
-              {!props.footer && <Languages />}
+              {!props.footer && (
+                <Languages isRussian={isRussian} setIsRussian={setIsRussian} />
+              )}
             </div>
           </nav>
         </div>

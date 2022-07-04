@@ -36,6 +36,16 @@ import doc1 from "../../assets/docs/cert1.jpg";
 import doc2 from "../../assets/docs/cert2.jpg";
 import OurService from "../OurService/OurService";
 
+// swiper
+import Swiper from "swiper";
+import "swiper/swiper-bundle.css";
+import SwiperCore, { Navigation, Pagination } from "swiper/core";
+
+// langs
+import { useTranslation } from "react-i18next";
+
+SwiperCore.use([Navigation, Pagination]);
+
 const ContactItem = (props) => {
   return (
     <div className={s.contact_item}>
@@ -57,59 +67,62 @@ const ContactItem = (props) => {
     </div>
   );
 };
-const contacts = [
-  {
-    title: "Адрес:",
-    text: [" Крым, 299014, Севастополь", "Ул. Бориса Михайлова, 7-б"],
-    img: geo,
-  },
-  {
-    title: "Часы работы:",
-    text: [" Пн-Пт 10:00-18:00 "],
-    img: watch,
-  },
-  {
-    title: "Телефон:",
-    text: [" +7(978)140-93-44", "+7(978)557-87-77"],
-    img: call,
-  },
-  {
-    title: "Эл. Почта:",
-    text: [" icgsev@gmail.com"],
-    img: mailBlue,
-  },
-];
-const achievs = [
-  { text: "Оформление виз", img: visa },
-  { text: "Бронирование билетов", img: plain, rotate: true },
-  { text: "Организация чартерных рейсов", img: hands },
-  { text: "Представление интересов компании Судовладельца", img: doc },
-  {
-    text:
-      "Предоставление персонала для работы на верфях и береговых строительных проектах",
-    img: peoples,
-  },
-  {
-    text:
-      "Предоставление квалифицированного плавсостава, как в единичном порядке, так и на основе комплектования полных экипажей, для всех типов судов",
-    img: ship,
-  },
-  { text: "И другие сопутствующие услуги", img: more },
-];
+
 const MainPage = () => {
+  const { t, i18n } = useTranslation();
+  const contacts = [
+    {
+      title: t("contacts.adress"),
+      text: [t("contacts.crimea"), t("contacts.street")],
+      img: geo,
+    },
+    {
+      title: t("contacts.hours"),
+      text: [t("contacts.hours_time")],
+      img: watch,
+    },
+    {
+      title: t("contacts.tel"),
+      text: [" +7(978)140-93-44", "+7(978)557-87-77"],
+      img: call,
+    },
+    {
+      title: t("contacts.email"),
+      text: [" icgsev@gmail.com"],
+      img: mailBlue,
+    },
+  ];
+  const achievs = [
+    { text: t("our_services.visa_processing"), img: visa },
+    { text: t("our_services.tickets"), img: plain, rotate: true },
+    { text: t("our_services.flights"), img: hands },
+    { text: t("our_services.interests"), img: doc },
+    { text: t("our_services.manpower"), img: peoples },
+    { text: t("our_services.provision"), img: ship },
+    { text: t("our_services.other"), img: more },
+  ];
+  React.useEffect(() => {
+    const swiper = new Swiper(".swiper-container", {
+      slidesPerView: 1,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }, []);
   return (
     <main className={s.main} id="top">
       <section className={s.inner}>
         <TopBlock
           bg={bg1}
           width="579px"
-          title="Международная Крюинговая Группа"
-          subtitle={[
-            "Занимает одну из ведущих позиций в сфере подбора и трудоустройства моряков, работая на рынке с 2000г., выполняя заказы на разные типы судов.",
-          ]}
-          subtitle_mob={[
-            "Занимает одну из ведущих позиций в сфере подбора и трудоустройства моряков, работая на рынке с 2000г., выполняя заказы на разные типы судов.",
-          ]}
+          title={t("first_page.title")}
+          subtitle={[t("first_page.subtitle")]}
+          subtitle_mob={[t("first_page.subtitle")]}
           links={[
             {
               img: inst,
@@ -125,27 +138,57 @@ const MainPage = () => {
             },
             {
               img: mail,
-              href: "mailto:icgsev@gmail.com",
+              href: "https://e.mail.ru/compose/?to=icgsev@gmail.com",
             },
           ]}
         />
         <AboutCompany />
         <section className={s.certificates}>
           <div className="container">
-            <div className={title.title}>Сертификаты</div>
+            <div className={title.title}>{t("certificates")}</div>
             <div className={s.certificates_inner}>
-              <a href={doc1} target="_blank" className={s.certificate}>
-                <img src={doc1} alt="doc1" />
-              </a>
-              <a href={doc2} target="_blank" className={s.certificate}>
-                <img src={doc2} alt="doc1" />
-              </a>
+              <div className={s.certificate}>
+                <a href={doc1} target="_blank">
+                  <img src={doc1} alt="doc1" />
+                </a>
+              </div>
+              <div className={s.certificate}>
+                <a href={doc2} target="_blank">
+                  <img src={doc2} alt="doc1" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className={`${s.certificates} ${s.swiper}`}>
+          <div class="swiper-pagination"></div>
+          <div className="container">
+            <div className={title.title}>{t("certificates")}</div>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div className={s.certificate}>
+                    <a href={doc1} target="_blank">
+                      <img src={doc1} alt="doc1" />
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div className={s.certificate}>
+                    <a href={doc2} target="_blank">
+                      <img src={doc2} alt="doc1" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
           </div>
         </section>
         <OurService
           bg={bg_servise}
-          title="Наши услуги"
+          title={t("our_services.title")}
           achievs={achievs}
           id="service"
         />
@@ -153,7 +196,7 @@ const MainPage = () => {
           <div className="container">
             <div className={title.title}>
               {" "}
-              <span>Контакты</span>
+              <span>{t("contacts.title")}</span>
             </div>
             <div className={s.contacts_inner}>
               <div className={s.contacts_inner__left}>

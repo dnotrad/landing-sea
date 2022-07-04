@@ -1,0 +1,138 @@
+{
+  "header": {
+    "main": "Home",
+    "about": "About Us",
+    "our_services": "Our services",
+    "seafarers": "For seafarers",
+    "shipowners": "For shipowners",
+    "contact": "Contacts",
+    "vacancies": "Vacancies",
+    "form": "Form",
+    "Company_services": "Company services",
+    "Cooperation": "Cooperation"
+  },
+  "first_page": {
+    "title": "International Crewing Group",
+    "subtitle": "It occupies one of the leading positions in the field of selection and employment of seafarers, operating in the market since 2000, fulfilling orders for various types of ships."
+  },
+  "about": {
+    "title": "About company",
+    "subtitle": "«ICG.Ltd» is a certified and licensed crewing company. More than 20 years of experience in the field of crew selection and configuration, our company provides optimal solutions and high-quality services for the selection of marine specialists for various types of vessels.",
+    "subtitle2": "We are proud of the fact that our company employs highly qualified specialists who are able to produce a wide range of services related to our type of activity:",
+    "subtitle3": "To achieve the best results of the work of the company «ICG Ltd»., our employees regularly undergo various internships, thematic courses, at the end of which they receive the appropriate certificates.",
+    "subtitle4": "Aware of the fact that the safety of the ship, cargo and crew on board depends on the professional skills and knowledge of seafarers, we pay special attention to the testing of seafarers, on the knowledge of all safety standards and regulations.",
+    "achievs": {
+      "1": "Controlling and checking up professional knowledge and skills",
+      "2": "Controlling and checking up availability and authenticity of required documents in accordance with STCW 78/95 regulations",
+      "3": "Organizing specialized training courses and seminars",
+      "4": "Controlling and checking up the command of English",
+      "5": "Visa support"
+    }
+  },
+  "certificates": "Our licence",
+  "our_services": {
+    "title": "Our services",
+    "visa_processing": "Visa processing",
+    "tickets": "Booking tickets",
+    "flights": "Charter flights arrangement",
+    "interests": "Representation of Owner's Company",
+    "manpower": "Manpower for shipyards and onshore projects",
+    "provision": "Provision of qualified crew, both on a single basis and on the basis of manning full crews, for all types of vessels",
+    "other": "Other related services"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "adress": "Adress:",
+    "crimea": "Crimea, 299014, Sevastopol,",
+    "street": "Borisa Mikhailova Str., 7-b",
+    "hours": "Working hours:",
+    "hours_time": "Mon-Fri 10 AM – 5 PM",
+    "tel": "Telephone:",
+    "email": "Email"
+  },
+  "shipowners": {
+    "title": "For shipowners",
+    "subtitle": "«International Crewing Group» offers a number of services for completing high-quality crew for different types of vessels. We follow international and national requirements. All our candidates are carefully selected by our qualified and experienced staff.",
+    "subtitle_mob": "International Crewing Group offers a range of services for the recruitment of high-quality crew for various types of vessels. We follow international and national requirements.",
+    "more": "For all questions, you can call us by phone or write to the messenger:",
+    "service": "Company services",
+    "tickets": "Booking tickets",
+    "uniform": "Uniform and protective clothes supply",
+    "boarding": "Boarding/disembarking, including visa support",
+    "owners": "Representation of Owner's Company",
+    "interwiev": "Pre-employment interview, monitoring and verification of professional skills and knowledge",
+    "assistance": "Assistance in passing a medical examination",
+    "controle": "Controlling and checking up availability and authenticity of required documents in accordance with STCW 78/95 regulations",
+    "travel": "Travelling specialized repair gangs, technical survey and supervision",
+    "manpower": "Manpower for shipyards and onshore projects",
+    "provision": "Provision of qualified crew, both on a single basis and on the basis of manning full crews, for all types of vessels",
+    "other": "Other related services",
+    "cooperation": {
+      "title": "Cooperation",
+      "p1": "The International Crewing Group company is engaged in employment of seafarers of Russia and Ukraine, namely: it completes ships with seafarers of all specialties: captains, navigators, mechanics, electricians, refrigerator specialists, technologists, adjusters, motorists, sailors of all specialties, cooks, service personnel, etc. For commercial vessels of all types: RTMK-S, RTM-S «Sodruzhestvo», BATM, RCTS, RTMA, STM, SRTM «stercoder».",
+      "p2": {
+        "first": "Our company is interested in establishing cooperation and interaction with shipowners.",
+        "we_works": "We have been working ",
+        "we_works_2": "in the labor market for more than ",
+        "we_works_3": "20 years.",
+        "our_spec": " All our specialists ",
+        "our_spec_2": "are qualified, well-educated, licensed and certified ",
+        "our_spec_3": "in accordance with the requirements of STCW - 78/95. "
+      },
+      "p3": {
+        "1": "We have offices and specialists in the cities " ,
+        "2": "Sevastopol, Kerch, Rostov-on-Don, Odessa, Nikolaev."
+      },
+      "p4": {
+          "1": "In addition, our company has experience in ",
+          "2": "ship repair of any complexity, ",
+          "3": "so we can offer you qualified repair teams that are always ready to work on your request. Our company has repeatedly converted and modernized fishing vessels of many foreign companies in such ports as Klaipeda, Varna, Gdansk, Las Palmas de Gran Canaria, Conakry, Walvis Bay, Cape Town. Our specialists constantly",
+          "4": " conduct MRTO ", 
+          "5": "of our partners' vessels."
+      },
+      "p5":{
+          "1": "We can work as ",
+          "2": "a maritime agency, ",
+          "3": "and we can also ",
+          "4": "represent your company ",
+          "5": " on any terms that are favorable to you. The selection of the crew, sending the sailors to board the ship, carrying out MRTO, repairs of any complexity, preparing to go on a fishing voyage to various areas of seafood production, as well as the sale of all fish products produced."
+      },
+      "p6": {
+          "1": "Our company also has very close ",
+          "2": "business relations",
+          "3": "with the country's leading ", 
+          "4": "airlines ",
+          "5": "and travel agencies, so we can",
+          "6": " arrange the purchase of tickets ",
+          "7": "to all destinations in a very short time and at very favorable prices."
+      },
+      "p7": {
+          "1": "If you need any additional information, we will be happy to provide it to you at your request."
+      }
+    }
+  },
+  "seamans": {
+      "title": "Working at sea",
+      "subtitle": "The «International Crewing Group» is looking for specialists who are ready to maintain its high level of work on board. We offer good working conditions and opportunities for growth. ICG.Ltd invites marine specialists of various specializations and qualifications to cooperate.",
+      "subtitle_mob": "The International Crewing Group is looking for specialists who are ready to maintain its high level of work on board. We offer good working conditions and opportunities for growth.",
+      "questions": "For all questions, you can call us by phone or write to the messenger:",
+      "vacancies": "Vacancies",
+      "urgently_required": "Urgently required",
+      "exp": "*Work experience, good knowledge of English will speed up your employment.",
+      "vakansia": "An experienced ref-mechanic on the BATM ship. Landing in Las Palmas when the candidate is ready.",
+      "vakansia_cash": "Salary ",
+      "button": "More vacancies",
+      "also": "Also requires experienced personnel on a BATM-type vessel:",
+      "requird": {
+          "1": "Ref-mechanic, assistant ref-mechanic and ref-machinist",
+          "2": "Roller winch",
+          "3": "Ship's doctor",
+          "4": "Chef",
+          "5": "Turner"
+      },
+      "date": "Date of placement",
+      "permanent": "On a permanent basis, required: refmechanics; electrical mechanics; mechanics-senior mechanics, second, third; mechanics adjusters; technologists; tralmasters; sailors of the trawl and in the shop; barmaids, waitresses, laundresses",
+      "rule": "*By performing these actions, you confirm that you give your consent to the processing of your personal data."
+
+  }
+}
