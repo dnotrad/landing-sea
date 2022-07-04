@@ -79,6 +79,11 @@
 .certificates.swiper {
   display: none;
 }
+.map{
+  width: 50%;
+  height: 400px;
+}
+
 
 @media (max-width: 800px) {
   .certificates {
@@ -100,6 +105,9 @@
     margin-bottom: 30px;
   }
   .contacts_inner__right {
+    width: 100%;
+  }
+  .map{
     width: 100%;
   }
 }
